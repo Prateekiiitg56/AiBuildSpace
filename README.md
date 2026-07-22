@@ -1,65 +1,88 @@
-# AiBuildSpace ⚡
-> **Bespoke Web Design & Cognitive Automation Agency**
+<div align="center">
+
+# AIBUILDSPACE
+
+### Bespoke Web Design & Cognitive Automation Agency
+
+[![Next.js](https://img.shields.io/badge/NEXT.JS_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![Groq AI](https://img.shields.io/badge/GROQ_AI-F05032?style=for-the-badge&logo=git&logoColor=white)](https://groq.com/)
 
 ---
 
-## 👁️ Overview & Core Mission
+</div>
 
-At **AiBuildSpace**, we craft custom, high-fidelity digital platforms and engineer bespoke AI/cognitive automation pipelines for ambitious brands and growing businesses. 
+## OVERVIEW & MISSION
 
-Our core motive is simple: **Zero templates. Pure operational power.**
+**AiBuildSpace** crafts custom, high-fidelity digital platforms and engineers bespoke AI/cognitive automation pipelines for ambitious brands and growing enterprises.
 
-We eliminate generic web design bloat and replace outdated manual workflows with intelligent, high-impact digital experiences. By merging real-time 3D WebGL visuals with automated AI pipelines, we give brands an unfair operational advantage in an AI-driven digital economy.
+> **MOTIVE: Zero Templates. Pure Operational Power.**
+
+We eliminate generic web design bloat and replace manual workflows with intelligent, high-impact digital experiences. By merging real-time 3D WebGL visuals with automated AI infrastructure, we provide brands with a distinct operational advantage.
 
 ---
 
-## 🛠️ What We Do
+## CORE CAPABILITIES
 
-### 1. High-Fidelity 3D Web & Interactive Interfaces
-- Custom WebGL & Three.js product showcases with interactive 3D elements.
-- Fluid glassmorphic UI, custom shaders, and physics-driven micro-interactions.
+<details open>
+<summary><b>1. High-Fidelity 3D Web & Interactive Interfaces</b></summary>
+<br />
+
+- Custom WebGL and Three.js product showcases featuring interactive 3D elements.
+- Glassmorphic UI, custom shaders, and physics-driven micro-interactions.
 - Fully responsive, hardware-accelerated layouts optimized for maximum conversion.
 
-### 2. Cognitive AI & Workflow Automation
+</details>
+
+<details>
+<summary><b>2. Cognitive AI & Workflow Automation</b></summary>
+<br />
+
 - Autonomous lead intake, AI email routing, and automated calendar scheduling.
-- Custom LLM integration & RAG-driven knowledge assistants (Groq AI, PyTorch, n8n).
+- Custom LLM integration and RAG-driven knowledge assistants via Groq AI & PyTorch.
 - Webhook-triggered documentation, content generation, and instant feedback loops.
 
-### 3. Full-Stack Performance Engineering
-- Next.js App Router architecture engineered for sub-100ms latency.
+</details>
+
+<details>
+<summary><b>3. Full-Stack Performance Engineering</b></summary>
+<br />
+
+- Next.js App Router architecture engineered for sub-100ms response times.
 - Strict security standards, clean state management, and zero template overhead.
 - Optimized asset pipelines delivering fluid 60FPS animations.
 
+</details>
+
 ---
 
-## 🎯 Our Core Motive & Philosophy
+## ARCHITECTURE & PHILOSOPHY
 
 ```
-  High-Fidelity Aesthetics  +  Cognitive AI Infrastructure  =  Unrivaled Digital Presence
+  [ High-Fidelity Aesthetics ] + [ Cognitive AI Infrastructure ] === Unrivaled Digital Engine
 ```
 
-1. **Aesthetic Excellence**: First impressions matter. We design interfaces that command attention and elevate brand perception instantly.
-2. **Operational Efficiency**: Code shouldn't just look pretty; it must do real work. We automate repetitive human processes into background AI tasks.
-3. **Engineering Integrity**: Built from scratch with modern full-stack standards. Every component is tailored to the exact requirements of the brand.
+* **Aesthetic Excellence**: Interfaces designed to command attention and elevate brand perception.
+* **Operational Efficiency**: Converting repetitive human processes into autonomous background tasks.
+* **Engineering Integrity**: Custom architecture tailored precisely to organizational objectives.
 
 ---
 
-## 🌐 Featured Digital Ecosystem
+## DIGITAL ECOSYSTEM
 
-- 🚀 **Live Platform**: [AiBuildSpace](https://aibuild.space)
-- 🎨 **Portfolio Showcase**: Interactive 3D portfolios, AI tools, and EdTech OS systems.
-- 🗓️ **Instant Booking**: Integrated real-time client discovery & consultation engine.
-
----
-
-## 📫 Connect With The Studio
-
-- 📧 **Email**: `AiBuildSpacee@gmail.com`
-- 📸 **Instagram**: [@aibuild.space](https://instagram.com/aibuild.space)
-- 🌐 **Portfolio**: [Prateek's Portfolio](https://prateek-portfolio-tau.vercel.app/)
+* **Main Studio**: [AiBuildSpace](https://aibuild.space)
+* **Portfolio**: [Prateek's Portfolio](https://prateek-portfolio-tau.vercel.app/)
+* **Instagram**: [@aibuild.space](https://instagram.com/aibuild.space)
+* **Direct Contact**: `AiBuildSpacee@gmail.com`
 
 ---
 
-<p align="center">
-  <sub>AiBuildSpace © 2026. All Rights Reserved.</sub>
-</p>
+<div align="center">
+
+```
+AiBuildSpace © 2026 | ALL RIGHTS RESERVED
+```
+
+</div>
