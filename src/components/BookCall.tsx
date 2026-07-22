@@ -100,11 +100,6 @@ export default function BookCall() {
     return date < todayStart;
   };
 
-  const isWeekend = (day: number) => {
-    const date = new Date(currentYear, currentMonth, day);
-    return date.getDay() === 0 || date.getDay() === 6;
-  };
-
   const isToday = (day: number) => {
     return (
       day === today.getDate() &&
@@ -113,10 +108,33 @@ export default function BookCall() {
     );
   };
 
+  const isPastTimeSlot = (timeSlotStr: string, dateStr: string) => {
+    if (!dateStr) return false;
+    const selectedDateObj = new Date(dateStr);
+    const now = new Date();
+
+    if (
+      selectedDateObj.getDate() !== now.getDate() ||
+      selectedDateObj.getMonth() !== now.getMonth() ||
+      selectedDateObj.getFullYear() !== now.getFullYear()
+    ) {
+      return false;
+    }
+
+    const [time, modifier] = timeSlotStr.split(" ");
+    let [hours, minutes] = time.split(":").map(Number);
+    if (modifier === "PM" && hours < 12) hours += 12;
+    if (modifier === "AM" && hours === 12) hours = 0;
+
+    const slotTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+    return slotTime <= now;
+  };
+
   const handleDateSelect = (day: number) => {
-    if (isPastDate(day) || isWeekend(day)) return;
+    if (isPastDate(day)) return;
     const dateStr = `${MONTHS[currentMonth]} ${day}, ${currentYear}`;
     setSelectedDate(dateStr);
+    setSelectedTime("");
   };
 
   const handleSubmit = async () => {
@@ -305,7 +323,7 @@ export default function BookCall() {
                     {/* Day cells */}
                     {Array.from({ length: daysInMonth }).map((_, i) => {
                       const day = i + 1;
-                      const disabled = isPastDate(day) || isWeekend(day);
+                      const disabled = isPastDate(day);
                       const selected =
                         selectedDate === `${MONTHS[currentMonth]} ${day}, ${currentYear}`;
                       const todayFlag = isToday(day);
@@ -357,22 +375,42 @@ export default function BookCall() {
                         Select a date to see available time slots
                       </p>
                     </div>
+                  ) : TIME_SLOTS.every((t) => isPastTimeSlot(t, selectedDate)) ? (
+                    <div className="flex flex-col items-center justify-center h-64 text-center px-4">
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-3 text-accent">
+                        <Clock className="w-6 h-6" />
+                      </div>
+                      <p className="text-sm font-bold text-white mb-1">
+                        All time slots for today have passed
+                      </p>
+                      <p className="text-xs text-white/40 max-w-xs">
+                        Please select an upcoming date on the calendar to view available slots.
+                      </p>
+                    </div>
                   ) : (
                     <div className="grid grid-cols-2 gap-2 max-h-[320px] overflow-y-auto pr-2 custom-scrollbar">
-                      {TIME_SLOTS.map((time) => (
-                        <button
-                          key={time}
-                          onClick={() => setSelectedTime(time)}
-                          className={`py-3 px-4 rounded-xl text-sm font-mono font-bold transition-all duration-200
-                            ${
-                              selectedTime === time
-                                ? "bg-accent text-black border border-accent shadow-[0_0_15px_rgba(204,255,0,0.2)]"
-                                : "bg-white/5 border border-white/5 text-white/60 hover:bg-white/10 hover:text-white hover:border-white/10"
-                            }`}
-                        >
-                          {time}
-                        </button>
-                      ))}
+                      {TIME_SLOTS.map((time) => {
+                        const isSlotDisabled = isPastTimeSlot(time, selectedDate);
+                        const isSelected = selectedTime === time;
+
+                        return (
+                          <button
+                            key={time}
+                            disabled={isSlotDisabled}
+                            onClick={() => setSelectedTime(time)}
+                            className={`py-3 px-4 rounded-xl text-sm font-mono font-bold transition-all duration-200
+                              ${
+                                isSlotDisabled
+                                  ? "opacity-20 cursor-not-allowed bg-white/5 border border-white/5 text-white/20"
+                                  : isSelected
+                                  ? "bg-accent text-black border border-accent shadow-[0_0_15px_rgba(204,255,0,0.2)]"
+                                  : "bg-white/5 border border-white/5 text-white/60 hover:bg-white/10 hover:text-white hover:border-white/10"
+                              }`}
+                          >
+                            {time}
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
